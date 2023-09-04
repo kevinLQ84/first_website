@@ -1,0 +1,371 @@
+/* set base properties in :root
+   Use all that I have learned + credit extra bits
+   + additional research.
+   Remember, mobile first
+   Define Variables*/
+
+@font-face {
+    font-family: 'ComicReliefRegular';
+        src: url('fonts/ComicRelief.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@viewport {
+    width: device-width;
+}
+
+:root {
+    --base-color: black;
+    --base-color-2: yellow;
+    --base-shadow-1: black;
+    --base-nav: rgb(173, 173, 173);
+    --base-bg-color: white;
+    --base-bg-color-2: rgb(91, 185, 91);
+    --base-color-2: rgb(59, 160, 128);
+    --base-border-color: black;
+    --base-button-bg: rgb(130, 240, 217);
+    --base-button-bg-current: rgb(144, 208, 112);
+    --link-color: rgb(26, 57, 124);
+    --link-hover-color: rgb(43, 91, 130);
+    --link-visited: rgb(15, 57, 92);
+
+    /*Font applied after saving HTML and CSS*/
+
+    font-family: 'ComicReliefRegular', 'Segoe UI', 'Times New Roman', Times ,sans-serif; /*From: https://fontlibrary.org/en/font/comic-relief*/
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*margin, border, etc in em scales off of font size. % scale off of parent*/
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    grid-area: mid;
+    margin: 10px;
+    border: 2px;
+    padding: 5px;
+    border: 2px solid var(--base-border-color);
+    border-radius: 1em;
+    background-color: var(--base-bg-color);
+}
+
+
+
+body {
+    display: block;
+    width: auto;
+    background-color: var(--base-bg-color);
+    background-repeat: repeat;
+    background-image: url(images/milky_way.jpg);  /*Remember Tiling settings*/
+}
+
+header {
+    grid-area: top;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1em;
+    text-align: center;
+
+    border: 6px solid var(--base-border-color);
+
+    background-color: var(--base-bg-color-2);
+}
+
+
+h2 {
+    display: flex;
+    border-bottom: 1px solid var(--base-border-color);
+}
+
+
+nav {
+    grid-area: mid-left;
+    margin: 1em;
+}
+
+input {
+    display: none;
+}
+
+/*Allow animated dropdown.*/
+/*from https://stackoverflow.com/questions/16421711/css-dropdown-menu-with-animation-no-js*/
+input~ul {
+    transition: max-height 0.5s linear;  
+    max-height: 0;
+    overflow: hidden; /*Prevents text from being shown when outside container. Reveals itself after height change.*/
+    background-color: var(--base-nav);
+    width: 10em;
+}
+
+input:checked~ul {
+    max-height: 10em; /*Height change with transition creates animation*/
+}
+
+
+/*Dropdown menu, click to open*/ /*Use labels and input to generate check for clickable*/
+label {
+    cursor: pointer;
+}
+
+input~ul {
+    display: block;
+    padding-inline-start: 1em; /*removes discs*/
+}
+
+nav li, ul{
+    display: block; /*removes discs*/
+}
+
+#page_nav>ul>li{
+    margin: 2em;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+label::after {
+    content: '\25B2';
+}
+
+input:checked+label::after{
+    content: '\25BC';
+}
+
+/*   */
+
+.list_buttons {
+    position: sticky;
+    top: 6.5%;
+}
+
+.list_buttons { /*container of buttons*/
+
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline-start: 0px;
+    justify-content: space-evenly;
+    border: 2px solid var(--base-border-color);
+    border-radius: 1em;
+
+    align-items: center;
+    text-align: center;
+    background-color: var(--base-bg-color);
+}
+
+.list_buttons li { /*targets buttons*/
+    display: flex;
+    /*keeps the button size look consistent*/ /*from https://css-tricks.com/snippets/css/a-guide-to-flexbox*/
+    flex-basis: 100%; 
+    /* flex-grow: 0.5; */
+}
+
+.button_nav {
+    position: sticky;
+    top: 0;
+    z-index: 1; /*prioritise display over other images. From https://developer.mozilla.org/en-US/docs/Web/CSS/z-index*/
+}
+
+#gallery img { /*Probably don't need gallery id but just in case*/
+    border: 5px solid var(--base-border-color);
+    border-radius: 1em;
+    background-color: var(--base-border-color);
+}
+#gallery {
+    text-align: center;
+}
+#gallery section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+/*Create transition for 1st image*/
+#gallery>section, #gallery img:nth-child(1){
+    position: relative;
+    padding: 0;
+}
+
+/*Animation delays from https://css-tricks.com/css-keyframe-animation-delay-iterations/*/
+@keyframes trans {
+    0%, 20% {
+        opacity: 1;
+    }
+
+    60%, 100% {
+      opacity: 0;
+    }
+  }
+
+#gallery>section img:nth-child(2){ /*Positioning is awkward but this will suffice.*/
+    position: absolute;
+    top: 0%;
+    animation: trans 10s infinite alternate ease-in-out ;
+}
+
+/**/
+img {
+    max-width: 100%;
+}
+
+section figure {
+    text-align: center;
+    padding: 1em;
+    box-shadow: 0 3px 5px var(--base-shadow-1);
+
+    border: 2px solid var(--base-border-color);
+    margin: 2em 1em;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+figcaption {
+    font-size: 0.9rem;
+}
+
+aside {
+    display: none;
+}
+
+section {
+    scroll-margin-top: 15rem;
+    margin: 0.5em;
+    border-radius: 1em;
+}
+
+main>section {
+    border: none;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color:var(--link-hover-color);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--link-visited);
+}
+
+.button {
+    box-sizing: border-box;
+    margin: 0.5em;
+    border: 3px solid var(--base-border-color);
+    padding: 0.5em;
+    width: 100%;
+    background: var(--base-button-bg);
+    text-decoration:none;
+}
+
+.current {
+    background-color: var(--base-button-bg-current);
+}
+
+
+footer {
+    margin: 1em;
+    border: 0.2em solid var(--base-border-color);
+    padding: 1em;
+    background-color: var(--base-bg-color);
+    grid-area: bottom;
+}
+
+
+table{
+    border-collapse: collapse;
+    margin: auto;
+}
+
+iframe {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+}
+
+
+td, th {
+    vertical-align: middle;
+    border: 1px solid var(--base-border-color);
+    padding: 0.5em;
+}
+
+th {
+    text-align: center;
+}
+
+.parts {
+    background-color: var(--base-bg-color-2);
+}
+
+tr:nth-child(1) {
+    background-color: var(--base-color-2);
+}
+
+table li {
+    margin: 0.5em;
+}
+
+ol li {
+    margin: 1em;
+}
+
+
+
+@media screen and (min-width: 480px) { /*For when screens big enough. mobile come first*/
+
+    aside { /*no asides created but I will have this here in case*/
+        grid-area: mid-right;
+        margin: 0.8em;
+        border: 2px solid var(--base-border-color);
+        padding: 5px;
+    }
+
+    .button {
+        margin: 1em;
+    }
+
+    .button:hover {
+        background: var(--base-color-2);
+    }
+
+    .button:visited {
+        color: var(--link-color)
+    }
+
+    ul {
+        padding-inline-start: 40px;
+    }
+    
+    section {
+        scroll-margin-top: 5.5rem;
+        padding: 1em;
+        margin: 1em;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 0.2fr;
+        grid-template-areas: 'top top top'
+                             'mid-left mid mid-right'
+                             'bottom bottom bottom'  ;
+        grid-gap: 10px;
+    }
+
+}

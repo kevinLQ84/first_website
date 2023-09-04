@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="icon" href="images/smiley.ico"/>
+    <title>Kevin's Website</title>                   
+    <link rel="stylesheet" href="my_style.css" />
+</head>
+
+<!-- Objective: create personal website with more than 1 page. Use CSS.
+     Ensure all videos have been watched/quizzes done before fully committing to website creation.
+     REMEMBER TO GIVE CREDIT IF I USE SOMETHING FROM SOMEWHERE
+     If I do use something that I think I haven't learned in past lectures, GIVE CREDIT
+     Ensure this file is updated continuously over past weeks. Deadline 22/12/21 -->
+
+     <!-- Remember to test files in validators -->
+     <!-- remember lang for phrases that aren't in english -->
+     <!--Headings for large Titles of topics
+         e.g. sections, articles, asides   -->
+     
+     
+
+<body>
+    <header>
+        <img src='images/ok_hand.png' title='' alt='White gloved hand symbolising OK'/>
+        <h1>My Website</h1>
+    </header>
+
+    <nav class = 'button_nav'>
+        <ul class = 'list_buttons'>
+            <li><a class = 'button current' href='index.html'>Myself</a></li> <!--light up current button-->
+            <li><a class = 'button' href='pizza.html'>Pizza Room</a></li>
+            <li><a class = 'button' href='gallery.html'>The Gallery</a></li>
+        </ul>
+    </nav>
+    
+
+    
+    <main>
+        <nav id ='page_nav'>
+            <ul>
+                <li>
+                    <input id = 'check1' type='checkbox'> <!--Clickable dropdown from https://stackoverflow.com/questions/44832572/pure-css-clickable-dropdown/44832652-->
+                    <label for = 'check1'>About Myself</label>
+                    <ul> 
+                        <li><a href='#birth'>Birth</a></li>
+                        <li><a href='#composition'>Composition</a></li>
+                        <li><a href='#favourite_food'>Favourite Food</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <input id = 'check2' type='checkbox'>
+                    <label for = 'check2'>Animal Appreciation</label>  
+                    <ul> 
+                        <li ><a href='#horse'>Horses</a></li>
+                        <li><a href='#crow'>Crows</a></li>
+                    </ul>
+                </li>
+    
+    
+            </ul>
+        </nav> 
+        
+        
+        <section id = 'about_self'>
+            <h2>About Myself</h2>
+
+            <section id = 'birth'>
+                <h3>Birth</h3>
+                <figure>
+                    <a href = 'https://pixabay.com/photos/ferris-wheel-london-eye-river-ride-6547089/'>
+                        <img src = "images/ferris-wheel-g9b49e9a02_640.jpg" title="The London Eye" alt="London Eye Ferris Wheel."/>  
+                    </a>
+                    <figcaption>Image by Dimitris Vetsikas, via Pixabay.</figcaption> 
+                </figure>
+                <p>
+                    I forgot where I was born so I'll just say London, since London is cool and has 
+                    a giant ferris wheel. That's cool. Speaking of cool, I remember my initial surroundings to be miserably cold,
+                    similarly inside of a fridge at 4 degrees Celcius. 
+                </p>
+                <p>
+                    As for when I was born, it was on the
+                    1st of July, 1984. It never felt like any time passed since the day of my birth. Perhaps it's my own personal conception of
+                    time that makes me feel as if that time barely passes, or perhaps it's because I constantly live in 
+                    the present, which forces me to perceive most of my time spend now. I often forget about 
+                    my birthdays since they keep happening once a year.
+                </p>
+            </section>
+
+            <section id ='composition'>
+               
+                    <h3>Composition</h3>
+                        <figure>
+                            <a href='https://en.wikipedia.org/wiki/Composition_of_the_human_body#/media/File:201_Elements_of_the_Human_Body.02.svg'>
+                                <img src="images/Elements_of_the_Human_Body.png" title="Elements of a Human" alt="Elemental composition of a human containing 3% nitrogen, 10% hydrogen, 18% carbon, 65% oxygen and the rest is other material."/>
+                            </a>
+                            <figcaption>Image by OpenStax College, <a href ='https://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a>, via Wikimedia Commons</figcaption>
+                        </figure>
+                    <p>
+                       
+                        
+                        My body according to <a href='https://en.wikipedia.org/wiki/Composition_of_the_human_body'>Wikipedia</a>, is comprised of oxygen, carbon, hydrogen, nitrogen, calcium, and phosphorus. 
+                        Only about 0.85% is composed of another five elements: potassium, sulfur, sodium, chlorine, and magnesium. As 100 grams of bananas
+                        have the equivalent of 358 milligrams of potassium on average and I weigh approximately 60 kilograms at the time of writing this information.
+
+         
+                    </p>
+                    <p>
+                        In my speculative theory, that means I am worth about 0.00358% in bananas. Ignoring all the other elemental compositions, It is entirely plausible to transmute myself 
+                        into purely bananas with that percentage. This also factors in the definite fact that bananas are mostly made of potassium and the rest of the banana is empty space, 
+                        similar to my skull. I recently discovered this when I performed an x-ray using a poorly modified microwave, my smartphone and a poorly modified printer. The phone and printer
+                        were relatively intact after my initial usage of the contraption, but the microwave was set on fire. This is why I would recommend everyone to have a portable fire extinguisher in every 
+                        room of one's personal household.
+                    </p>
+                
+
+            </section>
+
+            <section id = 'favourite_food'>
+                <h3>Favourite Food</h3>
+                <figure>
+                    <a href ='https://www.pexels.com/photo/pepperoni-pizza-803290/'>
+                        <img src='images/pizza.jpeg' title='Pizza' alt='Pizza with jalapeno, mushrooms, ham, pepperoni, cheese and tomato'/>
+                    </a>
+                    <figcaption>Image by Beqa Tefnadze, via Pexels</figcaption>
+                </figure>
+                <p>
+                    Personally, I believe Pizza to be the <em>best</em> food in existence. The most simple constituents being a wheat (<i lang='la'>triticum</i>) based circular food,
+                    layered with tomato (<i lang='la'>solanum lycopersicum</i>) and cheese (<i lang='la'>caseus</i>). Anything else is unacceptable in my eyes for the bare minimum of what is 
+                    recognisable to be defined as a 'pizza'. In my unswayed opinion, pizza is humanity's most prized food. It is in my top ten list of events that have occurred,
+                    surpassing the invention of sliced bread. The versatility of it rivals that of cereal for it's ability to fulfill the role of a model
+                    breakfast, appeasing the sensation known as 'hunger'. I find myself most irritable when this occurs.
+                </p>
+                <p>
+                   I've also dedicated 2 weeks of my life to researching if it was possible to define Pizza as a category of sandwich.
+                   Unfortunately, the closest definition I obtained was an 'open-faced sandwich' which isn't as purely definable as a sandwich
+                   unless I stacked two pizzas on top of each other.
+                </p>
+                <p>To see more on pizza, go to this <a href = 'pizza.html'>pizza recipe link</a> here or interact with the button on the navigation bar on the left.</p>
+
+            </section>
+
+
+
+            
+
+        </section>
+        
+        <section id = 'animals'>
+            <h2>Animal Appreciation</h2>
+            <section id = 'horse'>
+                <h3>Horses</h3>
+                <figure>
+                    <a href= 'https://en.wikipedia.org/wiki/Horse#/media/File:Nokota_Horses_cropped.jpg'>
+                        <img src='images/Nokota_Horses_cropped.jpg' title='Two black horses in a field' alt='Two black horses in a field'>
+                    </a>
+                    <figcaption>Image by François Marchal, via Wikipedia</figcaption>
+                </figure>
+                <p>
+                    According to <a href='https://en.wikipedia.org/wiki/Horse'>Wikipedia</a>, "The horse (<i lang='la'>Equus ferus caballus</i>) 
+                    is a domesticated one-toed hoofed mammal. It belongs to the taxonomic family
+                    <i lang='la'>Equidae</i> and is one of two extant subspecies of <i lang='la'>Equus ferus</i>. The horse evolved over 
+                    the past 45 to 55 million years from Eohippus, a small multi-toed creature, into the 
+                    large, single-toed animal of today. Humans began domesticating horses around 4000 BC,
+                    and their domestication is believed to have been widespread by 3000 BC."
+                </p>
+            
+                <p>
+                    My favourite animal is the horse, since I was born during the year of the horse according
+                    to the Chinese Calendar. To commemorate the creation of the horse, I have generated <i>The Gallery</i>. 
+                    I have chosen the horse as my subject of painting with several colors and variations. To further entice
+                    people, I have contained more than two paintings in my gallery, with an astonishing twelve paintings in total. The first of these have been set to transition to the second of these paintings as an alternative version of itself. 
+                </p>
+                <p>
+                    To view my gallery, you may enter this <a href = 'gallery.html'>horse gallery link</a> here interact with the button on the navigation bar on the left.
+                </p>
+                
+            </section>
+            
+            <section id = 'crow'>
+                <h3>Crows</h3>
+                
+                <figure>
+                    <a href= 'https://commons.wikimedia.org/wiki/File:Corvus-brachyrhynchos-001.jpg'>
+                        <img src='images/480px-Corvus-brachyrhynchos-001.jpg' title='Corvid on a beach' alt='Corvid on a beach'>
+                    </a>
+                    <figcaption>Image from Bruce Peninsula National Park, Ontario, Canada, via Wikipedia</figcaption>
+                </figure>
+                <p>
+                    According to <a href='https://en.wikipedia.org/wiki/Corvus'>Wikipedia</a>, "
+                    <i lang='la'>Corvus </i> is a widely distributed genus of medium-sized to large birds in the family <i lang='la'>Corvidae</i>. 
+                    The genus includes species commonly known as crows, ravens and rooks; there is no consistent 
+                    distinction between "crows" and "ravens", and these appellations have been assigned to different 
+                    species chiefly on the basis of their size, crows generally being smaller than ravens. The genus
+                    name is Latin for crow."
+                </p>
+                
+                <p>
+                    My second favourite animal is the crow, specifically the rook (<i lang='la'>Corvus frugilegus</i>) as it is the only animal 
+                    that I can closely interact with through the use of food on a daily basis without requiring the active maintenance 
+                    of the animal, such as a pet. Unfortunately, I do not have a second gallery dedicated to this animal as I ran out of 
+                    creative inspiration.
+                </p>
+
+            </section>
+
+
+        </section>
+
+
+    </main>
+    
+    <footer>
+        <h4>Disclaimer</h4>
+        <p><small>Most of this website is comprised of satire. Please do not take it too seriously.</small></p>
+        <p><small>Information sourced from Wikipedia licensed under the <a href='https://creativecommons.org/licenses/by-sa/3.0/'>CC BY-SA.</a>.</small></p>
+    </footer>
+
+
+</body>
+
+</html>
